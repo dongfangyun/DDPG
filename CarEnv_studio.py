@@ -165,7 +165,6 @@ class CarEnv:
         dist_to_start = self.location_player.distance(self.location_start)
         dist_to_end = self.location_player.distance(self.destination)
         
-
         # 车辆当前速度
         velocity_player = self.vehicle.get_velocity() # Return: carla.Vector3D - m/s
         velocity = int(3.6 * math.sqrt(velocity_player.x**2 + velocity_player.y**2 + velocity_player.z**2)) # --> km/h
@@ -177,7 +176,6 @@ class CarEnv:
         # 车辆当前角速度
         angular_velocity_player = self.vehicle.get_angular_velocity()
         angular_velocity = (angular_velocity_player.x, angular_velocity_player.y, angular_velocity_player.z)
-
 
         # 到达目的地则自动驾驶控制器自动换个目标点，controller中有传出的初始目的地，默认未done
         if self.agent.done():  # Check whether the agent has reached its destination
